@@ -38,7 +38,7 @@ const Form = ({ initialValues, editedCardId }) => {
     if (!previewSource) delete cardData.image;
     cardsListStore.editCard(editedCardId, cardData, token).then(() => {
       resetFormValues();
-      history.push('/keyboards');
+      history.push('/');
     });
   };
 

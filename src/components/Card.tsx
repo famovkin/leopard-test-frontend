@@ -21,7 +21,7 @@ const Card: FC<CardProps> = ({ card, onDelete }) => {
       <Paragraph width='10%' fontWeight={700}>{card.price}р.</Paragraph>
       <StyledFlex>
         <Button clickHandler={deleteHandler} fontSize='10px' text='Удалить' />
-        <Link to={`${path}/${card._id}`}>
+        <Link to={`${path}${card._id}`}>
           <Button fontSize='10px' text='Редактировать' />
         </Link>
       </StyledFlex>

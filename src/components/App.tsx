@@ -23,7 +23,7 @@ const App: FC = observer(() => {
 
   const login = async (email: string, password: string) => {
     await authStore.login(email, password);
-    history.push('/keyboards');
+    history.push('/');
   };
 
   const register = (email: string, password: string) => {
@@ -38,7 +38,7 @@ const App: FC = observer(() => {
   useEffect(() => {
     if (token) {
       authStore.loginWithToken();
-      history.push('/keyboards');
+      history.push('/');
     }
   }, [token, history]);
 
@@ -59,10 +59,10 @@ const App: FC = observer(() => {
             buttonText='Зарегистрироваться'
           />
         </Route>
-        <Route exact path='/keyboards'>
+        <Route exact path='/'>
           {loginStatus ? <CardsList /> : <Redirect to='/signin' />}
         </Route>
-        <Route path='/keyboards/:id'>
+        <Route path='/:id'>
           {loginStatus ? <CardPage /> : <Redirect to='/signin' />}
         </Route>
       </Switch>
