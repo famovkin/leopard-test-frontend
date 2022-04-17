@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react';
 export const useGetInputsValues = () => {
   const [values, setValues] = useState({});
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };

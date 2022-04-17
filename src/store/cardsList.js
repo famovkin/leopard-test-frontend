@@ -15,8 +15,8 @@ class CardsListStore {
     this.isLoading = true;
     return api
       .addKeyboard(formData, token)
-      .then((addedCard) => this.cardList.push(addedCard))
-      .catch((e) => {
+      .then(addedCard => this.cardList.push(addedCard))
+      .catch(e => {
         console.log(e);
         this.error = true;
       })
@@ -32,9 +32,9 @@ class CardsListStore {
       .removeKeyboard(cardId, token)
       .then(
         () =>
-          (this.cardList = this.cardList.filter((card) => card._id !== cardId))
+          (this.cardList = this.cardList.filter(card => card._id !== cardId))
       )
-      .catch((e) => {
+      .catch(e => {
         console.log(e);
         this.error = true;
       })
@@ -47,14 +47,12 @@ class CardsListStore {
   editCard(cardId, editedData, token) {
     this.isLoading = true;
     const editedIndexCard = this.cardList.findIndex(
-      (card) => card._id === cardId
+      card => card._id === cardId
     );
     return api
       .editKeyboard(cardId, editedData, token)
-      .then(() => {
-        this.cardList[editedIndexCard] = { ...editedData };
-      })
-      .catch((e) => {
+      .then(() => this.cardList[editedIndexCard] = { ...editedData })
+      .catch(e => {
         console.log(e);
         this.error = true;
       })
@@ -68,8 +66,8 @@ class CardsListStore {
     this.isLoading = true;
     api
       .getKeyboards(token)
-      .then((data) => (this.cardList = data))
-      .catch((e) => {
+      .then(data => this.cardList = data)
+      .catch(e => {
         console.log(e);
         this.error = true;
       })

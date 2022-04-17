@@ -21,7 +21,7 @@ class Auth {
           this.error = false;
         }
       })
-      .catch((e) => {
+      .catch(e => {
         console.log(e);
         this.error = true;
       })

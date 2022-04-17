@@ -1,9 +1,8 @@
 export const BASE_URL = "https://leopard-test-api.herokuapp.com/api";
 
-const checkServerResponse = (res) => {
-  if (res.ok) {
-    return res.json();
-  }
+const checkServerResponse = res => {
+  if (res.ok) return res.json();
+  
   return Promise.reject(res);
 };
 
@@ -17,7 +16,7 @@ export const register = (email, password) => {
       email,
       password,
     }),
-  }).then((res) => checkServerResponse(res));
+  }).then(res => checkServerResponse(res));
 };
 
 export const authorize = (email, password) => {
@@ -31,8 +30,8 @@ export const authorize = (email, password) => {
       password,
     }),
   })
-    .then((res) => checkServerResponse(res))
-    .then((data) => {
+    .then(res => checkServerResponse(res))
+    .then(data => {
       if (data.token) {
         localStorage.setItem("token", data.token);
         return data;
