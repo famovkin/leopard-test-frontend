@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/leopard-test-frontend/static/js/main.9792fbff.js",
+    "main.js": "/leopard-test-frontend/static/js/main.820e8c6c.js",
     "index.html": "/leopard-test-frontend/index.html",
-    "main.9792fbff.js.map": "/leopard-test-frontend/static/js/main.9792fbff.js.map"
+    "main.820e8c6c.js.map": "/leopard-test-frontend/static/js/main.820e8c6c.js.map"
   },
   "entrypoints": [
-    "static/js/main.9792fbff.js"
+    "static/js/main.820e8c6c.js"
   ]
 }
