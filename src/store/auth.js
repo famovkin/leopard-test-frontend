@@ -4,21 +4,31 @@ import * as auth from '../utils/auth';
 
 class Auth {
   isLoggedIn = false;
+  isLoading = false;
+  error = false;
 
   constructor() {
     makeAutoObservable(this);
   }
 
   login(email, password) {
+    this.isLoading = true;
     auth
       .authorize(email, password)
       .then((data) => {
         if (data.token) {
           this.isLoggedIn = true;
+          this.error = false;
         }
-        console.log('from store', this.isLoggedIn);
       })
-      .catch((e) => console.log(e));
+      .catch((e) => {
+        console.log(e);
+        this.error = true;
+      })
+      .finally(() => {
+        this.isLoading = false
+        setTimeout(() => this.error = false, 2000);
+      });
   }
 
   loginWithToken() {

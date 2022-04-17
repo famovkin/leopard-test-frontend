@@ -8,14 +8,14 @@ export const useGetInputsValues = () => {
     setValues({ ...values, [name]: value });
   };
 
-  const resetForm = useCallback(
+  const resetFormValues = useCallback(
     (newValues = {}) => setValues(newValues), [setValues]);
 
   return {
     values,
     setValues,
     handleChange,
-    resetForm,
+    resetFormValues,
   };
 };
 

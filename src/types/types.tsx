@@ -25,6 +25,41 @@ export type RouterParams = {
   id: string;
 };
 
-export type NavBarProps = {
+export type HeaderProps = {
   isAuth: boolean;
+};
+
+export type ButtonProps = {
+  clickHandler?: (e: any) => void;
+  text: string;
+  fontSize?: string;
+  padding?: string;
+  margin?: string;
+};
+
+export type TitleProps = {
+  text: string;
+};
+
+export type InputProps = {
+  value: string | '';
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type: string;
+  placeholder: string;
+  margin?: string;
+};
+
+export type ErrorPopupProps = {
+  isError?: boolean;
+};
+
+export type CardImageProps = {
+  src: string;
+alt: string;
+};
+
+export type ParagraphProps = {
+  children: React.ReactNode
+  width?: string;
+  fontWeight?: number;
 };
