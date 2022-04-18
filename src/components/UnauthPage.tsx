@@ -37,6 +37,7 @@ const UnauthPage: FC<UnauthPageProps> = ({
           type='email'
           placeholder='Почта'
           margin='0 0 22px'
+          required
         />
         <Input
           value={password || ''}
@@ -44,6 +45,7 @@ const UnauthPage: FC<UnauthPageProps> = ({
           type='password'
           placeholder='Пароль'
           margin='0 0 22px'
+          required
         />
         <Button text={buttonText} padding='10px' fontSize='16px' />
       </form>

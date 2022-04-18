@@ -47,6 +47,7 @@ export type InputProps = {
   type: string;
   placeholder: string;
   margin?: string;
+  required?: boolean;
 };
 
 export type ErrorPopupProps = {
