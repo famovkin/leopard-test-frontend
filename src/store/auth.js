@@ -35,6 +35,10 @@ class Auth {
     this.isLoggedIn = true;
   }
 
+  createError() {
+    this.error = true;
+  }
+
   logout() {
     this.isLoggedIn = false;
   }

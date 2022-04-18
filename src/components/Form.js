@@ -51,6 +51,7 @@ const Form = ({ initialValues, editedCardId }) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => setPreviewSource(reader.result);
+    reader.onerror = (e) => console.log(e);
   };
 
   const resetForm = () => {

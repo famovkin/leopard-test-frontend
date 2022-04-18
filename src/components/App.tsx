@@ -31,7 +31,10 @@ const App: FC = observer(() => {
     auth
       .register(email, password)
       .then(() => history.push('/signin'))
-      .catch(e => console.log(e))
+      .catch(e => {
+        authStore.createError();
+        console.log(e);
+      })
       .finally(() => cardsListStore.finishLoading());
   };
 
